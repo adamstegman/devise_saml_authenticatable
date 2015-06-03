@@ -9,7 +9,7 @@ module DeviseSamlAuthenticatable
         Devise.saml_config = OneLogin::RubySaml::Settings.new(YAML.load(File.read(IDP_CONFIG_PATH))[Rails.env])
       end
 
-      Devise.saml_config
+      @saml_config = Devise.saml_config
     end
   end
 end
